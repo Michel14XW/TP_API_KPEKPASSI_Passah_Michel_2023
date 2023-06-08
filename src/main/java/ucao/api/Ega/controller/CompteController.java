@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import ucao.api.Ega.entity.Client;
 import ucao.api.Ega.entity.Compte;
-import ucao.api.Ega.request.CompteCreationRequest;
 import ucao.api.Ega.service.ClientService;
 import ucao.api.Ega.service.CompteService;
 

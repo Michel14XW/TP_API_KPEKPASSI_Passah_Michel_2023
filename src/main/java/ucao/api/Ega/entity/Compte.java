@@ -44,11 +44,8 @@ public class Compte implements Serializable {
 
 
     public Compte( String typeCompte) {
-        this.numeroCompte = genererNumeroCompte();
+        this();
         this.typeCompte = typeCompte;
-        this.dateCreation = LocalDate.now();
-        this.solde = 0.0;
-        //this.client = client;
     }
 
 
