@@ -25,7 +25,7 @@ public class ClientController {
         return clientService.saveClient(client);
     }
     @PutMapping("/clents/{id}")
-    public Client updateClient(@PathVariable Integer id, Client client){
+    public Client updateClient(@PathVariable Integer id, @RequestBody Client client){
         client.setId(id);
         return clientService.saveClient(client);
     }
