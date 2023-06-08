@@ -34,6 +34,7 @@ public class Compte implements Serializable {
     @ManyToOne
     @JoinColumn(name = "client_id", insertable = false, updatable = false, nullable = false)
     private Client client;
+    private Integer client_id;
 
     public Compte(){
         this.numeroCompte = genererNumeroCompte();
@@ -41,23 +42,16 @@ public class Compte implements Serializable {
         this.solde = 0.0;
     }
 
-    /*public Compte(String numeroCompte, String typeCompte, LocalDate dateCreation, double solde, Client client) {
-        this.numeroCompte = genererNumeroCompte();
-        this.typeCompte = typeCompte;
-        this.dateCreation = LocalDate.now();
-        this.solde = 0.0;
-        this.client = client;
-    }*/
 
-    @JsonCreator
-    public Compte(@JsonProperty("typeCompte") String typeCompte, @JsonProperty("solde") double solde, @JsonProperty("client_id") Integer client_id) {
+    public Compte( String typeCompte) {
         this.numeroCompte = genererNumeroCompte();
         this.typeCompte = typeCompte;
         this.dateCreation = LocalDate.now();
         this.solde = 0.0;
-        ClientServiceImpl clientService = new ClientServiceImpl();
-        this.client = clientService.getOneClient(client_id);
+        //this.client = client;
     }
+
+
 
     private String genererNumeroCompte() {
         String randomString = UUID.randomUUID().toString().replaceAll("[^A-Z0-9]", "").substring(0, 5);
