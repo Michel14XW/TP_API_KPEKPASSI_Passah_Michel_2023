@@ -1,2 +1,7 @@
-package ucao.api.Ega.entity;public class OperationType {
+package ucao.api.Ega.entity;
+
+public enum OperationType {
+    DEPOSIT,
+    WITHDRAWAL,
+    TRANSFER
 }

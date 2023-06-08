@@ -14,7 +14,8 @@ public class Operation {
     private Integer id;
 
     private LocalDate date;
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private OperationType type;
     private double montant;
 
     @ManyToOne
@@ -26,10 +27,11 @@ public class Operation {
         this.date = LocalDate.now();
     }
 
-    public Operation(String type, double montant, Compte compte){
+    public Operation(OperationType type, double montant, Compte compte){
         this();
         this.type = type;
         this.montant = montant;
         this.compte = compte;
     }
 }
+
